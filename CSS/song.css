@@ -277,6 +277,10 @@ ul.nav li a.abs {
   text-transform: uppercase;
   background-color: #f6f6f6; }
 
+button {
+  background: none;
+  border: none; }
+
 /*@-webkit-keyframes bounce
  * 100%
  *     top: -20px */
