@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>LIVE Musiq</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+  <link rel="icon" type="image/ico" href="img/10.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+         <link rel="stylesheet" type="text/css" href="CSS/song.css">
+    
+<style>
+
+.tit {
+	font-family: "sans-serif";
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  justify-content: center;
+  font-size: 25px;
+
+}
+
+b {
+	background-image: url("https://66.media.tumblr.com/34da2754f7d227433c9c4149d5ce5a64/tumblr_o2h5teUqb31qcjf72o1_400.gif");
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	line-height: .95;
+	margin: 10px 0;
+}
+
+</style>
+    
+             <script src="https://connect.soundcloud.com/sdk.js"></script>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+             <script type="text/javascript" src="JS/song.js"></script>
+
+</head>
+<body>
+
+
+<div class="jumbotrons ng-scope">
+  <div class="event top-container">
+    <img id='sweetlandia' class="imgs img-rounded" src="img/06.png">
+    </div>
+
+      <div class="top">
+          <div align="center">
+          <div class="nav">
+            <ul>
+              <li onclick="filterSelection('all')">All</li>
+              <li onclick="filterSelection('AR')">AR Rahman</li>
+              <li onclick="filterSelection('YU')">YSR</li>
+              <li onclick="filterSelection('AN')">Anirudh</li>
+              <li onclick="filterSelection('HIP')">Hip Hop </li>
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
+              <li onclick="alert()">Hindi</li>
+              <li onclick="filterSelection('MALAI')">Malaiyaalam</li>
+              <li onclick="alert()">Telungu</li>
+              <li onclick="alert()">Telungu</li>
+              <li onclick="filterSelection('AL1')">Album</li>
+              </ul>
+          </div>
+            <div class="navicon">
+              <div class="bar first"></div>
+              <div class="bar middle"></div>
+              <div class="bar last"></div>
+            </div>
+        </div>
+      </div>
+    </div>        
+
+<!--#########((((((())))))\\\\\//////***Jumbotron Ends***//////\\\\\((((((()))))))#########-->
+
+<div class="jumbotron ng-scope">
+  <div class="container">
+      <h2 class="alphabets">We’ll let the music speak for itself.<br>
+        listen Music Jam and Spend your free time...</h2>
+  
+  </div>
+<!--\\\\\\\\\\\\\\///////////////****Movie List Panel Starts****\\\\\\\\\\\\\\///////////////-->
+
+<div class="container ng-scope">
+  <div class="panel panel-default" id="box">
+      <div class="panel-heading ng-binding">
+
+          <div id="demo"> 
+              All Songs 
+          </div>
+
+      <div class="pull-right">
+
+          <div class="serches">
+            <input class="search ng-pristine ng-untouched ng-valid" type="text" onclick="serch()" ng-model="query.name" placeholder="Search...">
+          </div>
+      </div>
+
+  </div>
+
+
+
+
+
+<div class="panel-body">
+   <div class="row show-list">
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+      <div class="filterDiv AR">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="Movie details.html">
+                  <img class="imgss img-rounded" src="img/09.png">
+                </a>
+                <div class="song text-center">
+                  <div><a href="#" class="tit tit ng-binding"><b>Alaporan Tamilan</b></a></div>
+                  <span id="play1" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause1" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop1" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv YU">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="/shows/72521">
+                  <img class="imgss img-rounded" src="img/02.png">
+                </a>
+                <div class="song text-center">
+                  <div><a href="#" class="tit tit ng-binding"><b>Kanne Kanne</b></a></div>
+                  <span id="play2" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause2" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop2" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv MALAI">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/04.jpg">
+                </a>
+                <div class="song text-center">
+                  <div><a href="#" class="tit tit ng-binding"><b>Raftaara</b></a></div>
+                  <span id="play3" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause3" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop3" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv HIP">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/05.jpeg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Vengamavan</b></a></div>
+                  <span id="play4" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause4" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop4" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv YU">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/07.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Anbae Peranbae</b></a></div>
+                  <span id="play5" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause5" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop5" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+      <div class="filterDiv AN">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/11.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Ullaallaa</b></a></div>
+                  <span id="play6" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause6" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop6" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv AR">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/06.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>CEO In The House</b></a></div>
+                  <span id="play7" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause7" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop7" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv AL1">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/08.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>CSK Da!</b></a></div>
+                  <span id="play8" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause8" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop8" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv YU MALAI">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/12.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Maari's Aanandhi</b></a></div>
+                  <span id="play9" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause9" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop9" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv MALAI">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/01.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Yentadukke</b></a></div>
+                  <span id="play10" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause10" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop10" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv AR">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/10.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Neethanae</b></a></div>
+                  <span id="play11" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause11" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop11" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+                  <!--]]]===(((())))////****MOVIE****////(((())))[[[-->
+
+      <div class="filterDiv MALAI">
+
+              <div class="col-xs-4 col-md-3 ng-scope" ng-repeat="show in shows | filter:query | orderBy:'rating':true">
+                <a href="#">
+                  <img class="imgss img-rounded" src="img/01.jpg">
+                </a>
+                <div class="song text-center">
+                    <div><a href="#" class="tit ng-binding"><b>Pancharachiri</b></a></div>
+                  <span id="play12" class="play glyphicon glyphicon-play"></span>
+                  <span id="pause12" class="pause glyphicon glyphicon-pause"></span>
+                  <span id="stop12" class="stop glyphicon glyphicon-stop"></span>
+                </div>
+              </div>
+      </div>
+
+      </div>
+    </div>
+
+<!--0000000\\\\\/////\\\\\/////***Movie List Ends***\\\\\/////\\\\\/////0000000-->
+
+  </div>
+</div>
+    </div>
+
+<!--\\\\\\\\\\\\\\///////////////****Movie List Panel Ends****\\\\\\\\\\\\\\///////////////-->
+
+
+
+<!--$$$$$$$$$$\\\\\|||||/////SCRIPT STARTS\\\\\|||||/////$$$$$$$$$$-->
+
+<script type="text/javascript" src="JS/movie.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src = "js/bootstrap.min.js"></script>
+
+
+<!--$$$$$$$$$$\\\\\|||||/////SCRIPT ENDS\\\\\|||||/////$$$$$$$$$$-->
+
+
+
+</body>
+</html>
